@@ -1,0 +1,28 @@
++-----------------------------------------------------+
+|                 UDP Dictionary Client                 |
++-----------------------------------------------------+
+|                Dictionary Lookup                     |
+| Look up words in the dictionary using UDP protocol   |
++-----------------------------------------------------+
+| Word:   [nonexistentword             ] [Search]     |
+|                                                      |
+| Quick Search: [                  ▼]                  |
+|                                                      |
+| [Progress Bar ======================>            100%]|
+|                                                      |
+| Result:                                              |
+| +--------------------------------------------------+ |
+| | +-----------------------+                        | |
+| | | Word Not Found        |                        | |
+| | +-----------------------+                        | |
+| |                                                  | |
+| | The word "nonexistentword" was not found in      | |
+| | the dictionary.                                  | |
+| |                                                  | |
+| |                                                  | |
+| |                                                  | |
+| +--------------------------------------------------+ |
+|                                                      |
+| Status: Word 'nonexistentword' not found             |
+| Server: localhost:8888                               |
++-----------------------------------------------------+ 

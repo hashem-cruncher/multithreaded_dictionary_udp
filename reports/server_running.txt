@@ -1,0 +1,31 @@
++-----------------------------------------------------+
+|                      Terminal                        |
++-----------------------------------------------------+
+|                                                      |
+| $ python udp_server.py 8888 ../data/dictionary.json  |
+| 2023-06-15 14:30:22 - INFO [UDPDictionaryServer] -  |
+| Loaded dictionary with 30 entries                    |
+| 2023-06-15 14:30:22 - INFO [UDPDictionaryServer] -  |
+| Server started on UDP port 8888                      |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Starting request handler pool with 5 handlers        |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Request handler pool started                         |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Handler 0 started                                    |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Handler 1 started                                    |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Handler 2 started                                    |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Handler 3 started                                    |
+| 2023-06-15 14:30:22 - INFO [RequestHandler] -       |
+| Handler 4 started                                    |
+| 2023-06-15 14:30:45 - DEBUG [UDPDictionaryServer] - |
+| Received request from ('127.0.0.1', 54321)          |
+| 2023-06-15 14:30:45 - DEBUG [RequestHandler] -      |
+| Handler 2 processing request from ('127.0.0.1', 54321)|
+| 2023-06-15 14:30:45 - DEBUG [RequestHandler] -      |
+| Sent response to ('127.0.0.1', 54321)               |
+|                                                      |
++-----------------------------------------------------+ 

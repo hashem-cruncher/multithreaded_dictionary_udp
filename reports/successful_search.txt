@@ -1,0 +1,28 @@
++-----------------------------------------------------+
+|                 UDP Dictionary Client                 |
++-----------------------------------------------------+
+|                Dictionary Lookup                     |
+| Look up words in the dictionary using UDP protocol   |
++-----------------------------------------------------+
+| Word:   [algorithm                    ] [Search]     |
+|                                                      |
+| Quick Search: [algorithm        ▼]                   |
+|                                                      |
+| [Progress Bar ======================>            100%]|
+|                                                      |
+| Result:                                              |
+| +--------------------------------------------------+ |
+| | +-----------------------+                        | |
+| | | algorithm             |                        | |
+| | +-----------------------+                        | |
+| |                                                  | |
+| | A step-by-step procedure or formula for solving  | |
+| | a problem, especially by a computer. Algorithms  | |
+| | are used for calculation, data processing, and   | |
+| | automated reasoning.                             | |
+| |                                                  | |
+| +--------------------------------------------------+ |
+|                                                      |
+| Status: Found definition for 'algorithm'             |
+| Server: localhost:8888                               |
++-----------------------------------------------------+ 
