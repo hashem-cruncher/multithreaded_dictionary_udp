@@ -1,242 +1,140 @@
-# UDP Dictionary Server
+# Multithreaded Dictionary Server - خادم القاموس متعدد المسارات
 
-A multithreaded dictionary server and client implementation using UDP sockets, JSON data format, and worker pool architecture.
+A client-server application that implements a multithreaded dictionary server with a graphical client.
 
-## 📋 Project Overview
+تطبيق قائم على هيكلية العميل-خادم ينفذ خادم قاموس متعدد المسارات مع واجهة رسومية للعميل.
 
-This project implements a client-server dictionary application that allows users to look up word definitions. Key features include:
+## Project Features - ميزات المشروع
 
-- **UDP Communication**: Uses connectionless protocol for fast, lightweight communication
-- **Worker Pool Architecture**: Efficiently handles multiple concurrent client requests
-- **JSON Data Format**: Stores dictionary entries in a structured, extensible format
-- **Multithreading**: Manages concurrent operations with thread synchronization
-- **PyQt5 GUI**: Provides a responsive graphical interface for the client
+- **Multithreaded Server**: Implements worker pool architecture
+- **UDP Communication**: Reliable communication through request-response pattern and retry mechanisms
+- **Dictionary Lookup**: Fast in-memory word lookup with full JSON dictionary
+- **Graphical Client**: PyQt5-based UI for easy dictionary lookups
 
-## 🏗️ Project Structure
+- **خادم متعدد المسارات**: ينفذ هيكلية تجمع العمال
+- **اتصال UDP**: اتصال موثوق من خلال نمط الطلب-استجابة وآليات إعادة المحاولة
+- **بحث القاموس**: بحث سريع في الذاكرة عن الكلمات مع قاموس JSON كامل
+- **واجهة رسومية للعميل**: واجهة مستخدم تعتمد على PyQt5 لعمليات بحث سهلة في القاموس
 
-```
-multithreaded_dictionary_udp/
-├── server/
-│   ├── __init__.py           # Empty file to make directory a package
-│   ├── udp_server.py         # Main UDP server implementation
-│   ├── request_handler.py    # Worker pool implementation
-│   └── json_dictionary.py    # Dictionary manager for JSON data
-│
-├── client/
-│   ├── __init__.py           # Empty file to make directory a package
-│   ├── udp_client_gui.py     # PyQt5 GUI client application
-│   └── udp_client_comm.py    # UDP client communication module
-│
-├── data/
-│   ├── __init__.py           # Empty file to make directory a package
-│   └── dictionary.json       # Dictionary data in JSON format
-│
-├── README.md                 # This documentation file
-└── requirements.txt          # Project dependencies (PyQt5)
-```
+## Architecture - الهيكل المعماري
 
-## ✨ Features
+### Server Components - مكونات الخادم
+- UDP socket for receiving requests
+- Thread pool for handling multiple client requests concurrently
+- JSON dictionary manager for efficient word lookups
+- Request-response protocol using JSON format
 
-- **Fast Communication**: UDP protocol for low-overhead networking
-- **Concurrent Processing**: Multiple worker threads process client requests
-- **Rich Dictionary Data**: Includes definitions, categories, and synonyms
-- **Responsive GUI**: Modern interface with search functionality
-- **Client-Side Caching**: Improves performance for repeated lookups
-- **Comprehensive Error Handling**: Handles network failures with retry mechanism
-- **Thread Synchronization**: Prevents race conditions during concurrent operations
+- مقبس UDP لاستقبال الطلبات
+- تجمع المسارات لمعالجة طلبات العملاء المتعددة بشكل متزامن
+- مدير قاموس JSON للبحث الفعال عن الكلمات
+- بروتوكول الطلب-استجابة باستخدام تنسيق JSON
 
-## 🚀 Installation & Setup
+### Client Components - مكونات العميل
+- Graphical User Interface (PyQt5)
+- Asynchronous request handling
+- Client-side retry mechanism for network errors
+- Result caching for performance
 
-### Prerequisites
+- واجهة المستخدم الرسومية (PyQt5)
+- معالجة الطلبات بشكل غير متزامن
+- آلية إعادة المحاولة من جانب العميل لأخطاء الشبكة
+- تخزين مؤقت للنتائج لتحسين الأداء
 
-- Python 3.7 or higher
-- pip (Python package installer)
+## Requirements - المتطلبات
 
-### Environment Setup
+- Python 3.6+
+- PyQt5 (for the client GUI)
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/udp-dictionary-server.git
-cd udp-dictionary-server
-```
+- بايثون 3.6 أو أعلى
+- PyQt5 (لواجهة المستخدم الرسومية للعميل)
 
-2. Create and activate a virtual environment:
+## Running the Application - تشغيل التطبيق
 
-**Windows:**
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-**macOS/Linux:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-## 🖥️ Running the Application
-
-### Starting the Server
+### Starting the Server - تشغيل الخادم
 
 ```bash
-# From the project root
-cd server
-python udp_server.py 8888 ../data/dictionary.json
+python -m server.udp_server <port> <dictionary-file>
 ```
 
-**Command-line arguments:**
-- `8888`: UDP port to listen on
-- `../data/dictionary.json`: Path to the dictionary file
+Example - مثال:
+```bash
+python -m server.udp_server 12345 data/dictionary.json
+```
 
-### Starting the Client
+### Starting the Client - تشغيل العميل
 
 ```bash
-# From the project root
-cd client
-python udp_client_gui.py localhost 8888
+python -m client.udp_client_gui <server-address> <server-port>
 ```
 
-**Command-line arguments:**
-- `localhost`: Server address
-- `8888`: Server UDP port
+Example - مثال:
+```bash
+python -m client.udp_client_gui localhost 12345
+```
 
-## 🧪 Testing the Application
+## Project Structure - هيكل المشروع
 
-### Basic Testing
+- `server/`: Server-side code - كود جانب الخادم
+  - `udp_server.py`: Main server implementation - التنفيذ الرئيسي للخادم
+  - `request_handler.py`: Worker pool and request processing - تجمع العمال ومعالجة الطلبات
+  - `json_dictionary.py`: Dictionary management - إدارة القاموس
+- `client/`: Client-side code - كود جانب العميل
+  - `udp_client_gui.py`: GUI implementation - تنفيذ الواجهة الرسومية
+  - `udp_client_comm.py`: Communication with server - الاتصال مع الخادم
+- `data/`: Data files - ملفات البيانات
+  - `dictionary.json`: Dictionary data in JSON format - بيانات القاموس بتنسيق JSON
 
-1. Start the server
-2. Launch the client
-3. Enter a word (e.g., "algorithm") in the search box
-4. Click "Search" or press Enter
-5. Verify that the definition appears in the result area
+## Communication Protocol - بروتوكول الاتصال
 
-### Multiple Clients Testing
+The client and server communicate using JSON-formatted messages. Each message contains an action, timestamp, and other action-specific fields.
 
-1. Start the server
-2. Launch multiple client instances from different terminals
-3. Perform lookups from different clients simultaneously
-4. Verify that all clients receive correct responses
+يتواصل العميل والخادم باستخدام رسائل بتنسيق JSON. تحتوي كل رسالة على إجراء، وطابع زمني، وحقول أخرى خاصة بالإجراء.
 
-### Error Handling Testing
-
-1. **Server Not Running**: 
-   - Start client without starting server
-   - Verify appropriate error message and retry attempts
-
-2. **Unknown Word**:
-   - Look up a non-existent word
-   - Verify that a "Not found" message is displayed
-
-3. **Server Restart**:
-   - Start server and client
-   - Shut down and restart the server
-   - Try lookups after restart
-   - Verify client recovers connection
-
-## 📊 Protocol Details
-
-### UDP Communication
-
-Unlike TCP, UDP doesn't establish a connection before sending data. This project implements reliability at the application level:
-
-- **Request IDs**: Each request gets a unique identifier
-- **Timeouts**: Client waits for responses with timeout
-- **Retries**: Automatically retries failed requests
-- **JSON Encoding**: Data is formatted as JSON for both requests and responses
-
-### Request Format
-
+### Sample Request (Lookup) - نموذج طلب (بحث)
 ```json
 {
   "action": "lookup",
   "word": "algorithm",
-  "timestamp": 1713493200.123,
+  "timestamp": 1649425678.123,
   "id": "550e8400-e29b-41d4-a716-446655440000"
 }
 ```
 
-### Response Format
-
+### Sample Response (Word Found) - نموذج استجابة (تم العثور على الكلمة)
 ```json
 {
   "status": "found",
   "word": "algorithm",
-  "definition": "A step-by-step procedure for solving a problem...",
-  "timestamp": 1713493200.456
+  "definition": "A step-by-step procedure or formula for solving a problem...",
+  "timestamp": 1649425678.456
 }
 ```
 
-## 🔧 Worker Pool Architecture
+## Error Handling - معالجة الأخطاء
 
-The server implements a worker pool architecture:
+The application implements comprehensive error handling:
+- Network communication errors (timeouts, connection issues)
+- Input validation
+- Dictionary file errors
+- Server-side exceptions
+- Client-side retry mechanisms
 
-1. Main thread: Listens for incoming UDP packets
-2. Request queue: Holds client requests
-3. Worker threads: Process requests from the queue
-4. Thread synchronization: Prevents race conditions
+يقوم التطبيق بتنفيذ معالجة شاملة للأخطاء:
+- أخطاء اتصال الشبكة (انتهاء مهلة الاتصال، مشاكل الاتصال)
+- التحقق من صحة المدخلات
+- أخطاء ملف القاموس
+- استثناءات جانب الخادم
+- آليات إعادة المحاولة من جانب العميل
 
-This design efficiently handles multiple concurrent clients while controlling resource usage.
+## Implementation Details - تفاصيل التنفيذ
 
-## 📔 Dictionary Format
+- **Thread Pool**: Implements a configurable number of worker threads
+- **Timeout Handling**: Socket timeouts with client retries
+- **Unique Request IDs**: For tracking request-response pairs
+- **Logging**: Comprehensive logging throughout the application
 
-The dictionary is stored in JSON format with the following structure:
-
-```json
-{
-  "metadata": {
-    "title": "Technology Dictionary",
-    "description": "A dictionary of technology terms",
-    "version": "1.0"
-  },
-  "entries": [
-    {
-      "word": "algorithm",
-      "definition": "A step-by-step procedure for solving a problem",
-      "category": "computing",
-      "synonyms": ["procedure", "process"]
-    }
-  ]
-}
-```
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-1. **"Address already in use" Error**:
-   - Wait a few minutes for the port to be released
-   - Use a different port: `python udp_server.py 8889 ../data/dictionary.json`
-
-2. **PyQt5 Installation Issues**:
-   - Windows: `pip install --upgrade pip` followed by `pip install PyQt5`
-   - Linux: `sudo apt-get install python3-pyqt5`
-   - macOS: `brew install pyqt5`
-
-3. **No Response from Server**:
-   - Check that server is running
-   - Verify that firewall is not blocking UDP traffic
-   - Ensure correct server address and port
-
-## 🚀 Extending the Project
-
-### Adding Words
-
-To add words to the dictionary:
-
-1. Open `data/dictionary.json`
-2. Add new entries to the "entries" array following the existing format
-3. Save the file and restart the server
-
-### Feature Ideas
-
-- Add search by category
-- Implement word suggestions
-- Create a server administration interface
-- Add user accounts and custom dictionaries
-- Implement performance monitoring and statistics
+- **تجمع المسارات**: ينفذ عددًا قابلاً للتكوين من مسارات العمال
+- **معالجة انتهاء المهلة**: انتهاء مهلة المقبس مع إعادة محاولات العميل
+- **معرفات الطلب الفريدة**: لتتبع أزواج الطلب-استجابة
+- **التسجيل**: تسجيل شامل عبر التطبيق
 
