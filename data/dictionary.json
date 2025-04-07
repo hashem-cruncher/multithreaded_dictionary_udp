@@ -1,0 +1,191 @@
+{
+    "metadata": {
+      "title": "Technology Dictionary",
+      "description": "A dictionary of technology and computing terms",
+      "version": "1.0",
+      "created": "2025-04-07",
+      "author": "Dictionary Project Team"
+    },
+    "entries": [
+      {
+        "word": "algorithm",
+        "definition": "A step-by-step procedure or formula for solving a problem, especially by a computer. Algorithms are used for calculation, data processing, and automated reasoning.",
+        "category": "computing",
+        "synonyms": ["procedure", "process", "formula"]
+      },
+      {
+        "word": "api",
+        "definition": "Application Programming Interface - a set of routines, protocols, and tools for building software applications. APIs specify how software components should interact.",
+        "category": "software",
+        "synonyms": ["interface", "programming interface"]
+      },
+      {
+        "word": "blockchain",
+        "definition": "A digital ledger of transactions that is duplicated and distributed across a network of computer systems. It records information in a way that makes it difficult or impossible to change or hack.",
+        "category": "technology",
+        "synonyms": ["distributed ledger", "digital ledger"]
+      },
+      {
+        "word": "cloud computing",
+        "definition": "The delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet ('the cloud').",
+        "category": "computing",
+        "synonyms": ["cloud", "cloud services"]
+      },
+      {
+        "word": "database",
+        "definition": "An organized collection of structured information or data, typically stored electronically in a computer system and controlled by a database management system (DBMS).",
+        "category": "computing",
+        "synonyms": ["data store", "data repository"]
+      },
+      {
+        "word": "encryption",
+        "definition": "The process of converting information or data into a code to prevent unauthorized access. Encryption uses algorithms to scramble data, which can only be unscrambled with a decryption key.",
+        "category": "security",
+        "synonyms": ["encoding", "cryptography"]
+      },
+      {
+        "word": "firewall",
+        "definition": "A network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It establishes a barrier between a trusted network and untrusted networks.",
+        "category": "security",
+        "synonyms": ["barrier", "security wall"]
+      },
+      {
+        "word": "gui",
+        "definition": "Graphical User Interface - a visual way of interacting with a computer using items such as windows, icons, and menus, used by most modern operating systems.",
+        "category": "software",
+        "synonyms": ["user interface", "graphical interface"]
+      },
+      {
+        "word": "hardware",
+        "definition": "The physical components of a computer system, including the case, central processing unit (CPU), monitor, keyboard, and more.",
+        "category": "computing",
+        "synonyms": ["equipment", "machinery", "components"]
+      },
+      {
+        "word": "internet of things",
+        "definition": "The interconnection via the Internet of computing devices embedded in everyday objects, enabling them to send and receive data.",
+        "category": "technology",
+        "synonyms": ["IoT", "connected devices"]
+      },
+      {
+        "word": "json",
+        "definition": "JavaScript Object Notation - a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.",
+        "category": "data",
+        "synonyms": ["data format", "object notation"]
+      },
+      {
+        "word": "kernel",
+        "definition": "The core component of an operating system that manages operations of the computer and hardware. It basically manages operations of memory and CPU time.",
+        "category": "operating systems",
+        "synonyms": ["core", "nucleus"]
+      },
+      {
+        "word": "latency",
+        "definition": "The delay before a transfer of data begins following an instruction for its transfer. In networking, it refers to the time it takes for a data packet to travel from source to destination.",
+        "category": "networking",
+        "synonyms": ["delay", "lag", "response time"]
+      },
+      {
+        "word": "microprocessor",
+        "definition": "An integrated circuit that contains all the functions of a central processing unit (CPU) of a computer. It's a multipurpose, programmable device that accepts digital data as input, processes it according to instructions stored in its memory, and provides results as output.",
+        "category": "hardware",
+        "synonyms": ["processor", "CPU", "chip"]
+      },
+      {
+        "word": "network",
+        "definition": "A collection of computers, servers, mainframes, network devices, peripherals, or other devices connected to one another to allow the sharing of data.",
+        "category": "networking",
+        "synonyms": ["computer network", "communications network"]
+      },
+      {
+        "word": "operating system",
+        "definition": "Software that manages computer hardware and software resources and provides common services for computer programs. The operating system is a component of the system software in a computer system.",
+        "category": "software",
+        "synonyms": ["OS", "system software"]
+      },
+      {
+        "word": "protocol",
+        "definition": "A set of rules or procedures for transmitting data between electronic devices, such as computers. In networking, protocols govern the format, timing, sequencing, and error control in data communication.",
+        "category": "networking",
+        "synonyms": ["rules", "standard", "convention"]
+      },
+      {
+        "word": "quantum computing",
+        "definition": "A type of computation that harnesses the collective properties of quantum states, such as superposition and entanglement, to perform calculations. It uses quantum bits or qubits instead of classical bits.",
+        "category": "computing",
+        "synonyms": ["quantum information processing", "quantum computation"]
+      },
+      {
+        "word": "router",
+        "definition": "A networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet and other packet-switched networks.",
+        "category": "networking",
+        "synonyms": ["gateway", "network gateway"]
+      },
+      {
+        "word": "software",
+        "definition": "The programs and other operating information used by a computer. Software is a set of instructions or data that tells a computer how to work.",
+        "category": "computing",
+        "synonyms": ["programs", "applications", "apps"]
+      },
+      {
+        "word": "threading",
+        "definition": "A technique in programming that enables multiple threads of execution to run concurrently within a program. This allows for parallel execution of multiple tasks.",
+        "category": "programming",
+        "synonyms": ["multithreading", "thread management"]
+      },
+      {
+        "word": "udp",
+        "definition": "User Datagram Protocol - a connectionless protocol that operates on top of the Internet Protocol (IP). It provides a way to send messages (datagrams) without establishing a connection or ensuring reliable delivery.",
+        "category": "networking",
+        "synonyms": ["User Datagram Protocol", "connectionless protocol"]
+      },
+      {
+        "word": "virtual reality",
+        "definition": "A simulated experience that can be similar to or completely different from the real world. Applications of virtual reality include entertainment (particularly video games) and education.",
+        "category": "technology",
+        "synonyms": ["VR", "computer-simulated reality"]
+      },
+      {
+        "word": "web browser",
+        "definition": "A software application for accessing and viewing websites on the internet. Common web browsers include Chrome, Firefox, Safari, and Edge.",
+        "category": "software",
+        "synonyms": ["browser", "internet browser"]
+      },
+      {
+        "word": "xml",
+        "definition": "Extensible Markup Language - a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.",
+        "category": "data",
+        "synonyms": ["Extensible Markup Language", "markup language"]
+      },
+      {
+        "word": "yaml",
+        "definition": "YAML Ain't Markup Language - a human-readable data serialization standard that can be used in conjunction with programming languages. It's commonly used for configuration files.",
+        "category": "data",
+        "synonyms": ["YAML Ain't Markup Language", "configuration format"]
+      },
+      {
+        "word": "zero day",
+        "definition": "A software vulnerability that is exploited before a vendor becomes aware of it. Because the developer has had zero days to address and patch the vulnerability, it poses a significant security risk.",
+        "category": "security",
+        "synonyms": ["zero-day exploit", "zero-day vulnerability"]
+      },
+      {
+        "word": "agile",
+        "definition": "A software development methodology characterized by iterative development, where requirements and solutions evolve through collaboration between cross-functional teams.",
+        "category": "software development",
+        "synonyms": ["agile methodology", "agile development"]
+      },
+      {
+        "word": "big data",
+        "definition": "Extremely large data sets that may be analyzed computationally to reveal patterns, trends, and associations, especially relating to human behavior and interactions.",
+        "category": "data",
+        "synonyms": ["large datasets", "massive data"]
+      },
+      {
+        "word": "cache",
+        "definition": "A hardware or software component that stores data so that future requests for that data can be served faster. The data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.",
+        "category": "computing",
+        "synonyms": ["memory cache", "temporary storage"]
+      }
+    ]
+  }
